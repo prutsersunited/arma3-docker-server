@@ -15,7 +15,7 @@ services:
       - ${publicip}:2302-2305:2302-2305/udp
     command:
       - "./arma3server"
-      - "-name=Caroga"
+      - "-name=Viado"
       - "-world=empty"
       - "-config=server.cfg"
     volumes:
