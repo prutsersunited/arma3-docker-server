@@ -1,0 +1,22 @@
+---
+version: '3.7'
+
+services:
+  arma3:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        username: ${username}
+        password: ${password}
+    ports:
+      - 83.137.145.246:2344:2344
+      - 83.137.145.246:2345:2345/tcp
+      - 83.137.145.246:2302-2305:2302-2305/udp
+    command:
+      - "./arma3server"
+      - "-name=Caroga"
+      - "-world=empty"
+      - "-config=server.cfg"
+    volumes:
+      - ./server.cfg:/home/steam/arma3/server.cfg
